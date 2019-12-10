@@ -51,6 +51,7 @@ task('build', function () {
     run('cd {{release_path}} && build');
 });
 
+//keygen function can be called using "deploy keygen" command
 task ('keygen',function(){
     run('php {{deploy_path}}/current/artisan key:generate && php {{deploy_path}}/current/artisan config:clear');
 });
