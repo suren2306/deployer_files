@@ -42,7 +42,7 @@ task('deploy', [
     'artisan:optimize',
     'artisan:migrate',
     'deploy:symlink',
-    'keygen',
+//    'keygen',
     'deploy:unlock',
     'cleanup',
     'success'
@@ -52,9 +52,9 @@ task('build', function () {
     run('cd {{release_path}} && build');
 });
 
-task ('keygen',function(){
-    run('php {{deploy_path}}/current/artisan key:generate && php {{deploy_path}}/current/artisan config:clear');
-});
+//task ('keygen',function(){
+//    run('php {{deploy_path}}/current/artisan key:generate && php {{deploy_path}}/current/artisan config:clear');
+//});
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
